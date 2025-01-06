@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Listings</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Job Listings</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="apply.html">Post Job</a>
+        </nav>
+    </header>
+
+    <main>
+        <div id="job-container">
+            <!-- Example job cards added dynamically by JavaScript -->
+        </div>
+    </main>
+
+    <footer >
+        &copy; 2024 SkillMatcher. All Rights Reserved.
+    </footer>
+
+    <script>
+        // Simulating job data for demo purposes
+        const jobs = [
+            {
+                title: "Frontend Developer",
+                description: "Looking for a skilled frontend developer with expertise in React.js and CSS.",
+                skills: ["React.js", "CSS", "JavaScript"],
+            },
+            {
+                title: "Backend Developer",
+                description: "We need a backend developer with strong knowledge of Node.js and MongoDB.",
+                skills: ["Node.js", "MongoDB", "APIs"],
+            },
+            {
+                title: "Full Stack Developer",
+                description: "Seeking an experienced full-stack developer proficient in MERN stack.",
+                skills: ["React.js", "Node.js", "MongoDB"],
+            },
+        ];
+
+        const jobContainer = document.getElementById("job-container");
+
+        // Dynamically render job cards
+        jobs.forEach((job) => {
+            const jobCard = document.createElement("div");
+            jobCard.className = "job-card";
+
+            // Job Title
+            const jobTitle = document.createElement("h2");
+            jobTitle.textContent = job.title;
+            jobCard.appendChild(jobTitle);
+
+            // Job Description
+            const jobDescription = document.createElement("p");
+            jobDescription.textContent = job.description;
+            jobCard.appendChild(jobDescription);
+
+            // Job Skills
+            job.skills.forEach((skill) => {
+                const skillBadge = document.createElement("span");
+                skillBadge.textContent = skill;
+                jobCard.appendChild(skillBadge);
+            });
+
+            // Apply Button
+            const applyButton = document.createElement("button");
+            applyButton.className = "apply-button";
+            applyButton.textContent = "Apply Now";
+            jobCard.appendChild(applyButton);
+
+            // Add the job card to the container
+            jobContainer.appendChild(jobCard);
+        });
+    </script>
+</body>
+
+</html>

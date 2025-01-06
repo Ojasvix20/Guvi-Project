@@ -1,0 +1,10 @@
+<web-app xmlns="http://java.sun.com/xml/ns/javaee" version="3.0">
+    <servlet>
+        <servlet-name>JobServlet</servlet-name>
+        <servlet-class>JobServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>JobServlet</servlet-name>
+        <url-pattern>/JobServlet</url-pattern>
+    </servlet-mapping>
+</web-app>
